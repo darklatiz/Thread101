@@ -14,6 +14,7 @@ public class AscendingHackerThread extends Hacker{
                 System.exit(0);
             }else {
                 System.out.println("Password tried, it did not work: " + i + " , by Hacker: " + this.getName());
+
             }
         }
     }
