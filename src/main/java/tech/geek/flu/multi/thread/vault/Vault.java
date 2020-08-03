@@ -9,7 +9,7 @@ public class Vault {
     }
 
     public boolean isCorrectPassword(int oPassword) throws InterruptedException {
-        Thread.sleep(5);
+        Thread.sleep(3);
         return this.password == oPassword;
     }
 }

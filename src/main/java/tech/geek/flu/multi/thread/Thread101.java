@@ -24,15 +24,12 @@ public class Thread101 {
         });
         th.setName("Worker Thread");
         th.setPriority(Thread.MAX_PRIORITY);
-        System.out.println("WE are in Thread: " + Thread.currentThread().getName() + " Before:::::");
         th.start();
-        System.out.println("WE are in Thread: " + Thread.currentThread().getName() + " After::::::");
         errorTh.start();
-
         Thread threadStaticClass = new TaskXxx();
         threadStaticClass.start();
+        System.out.println("LAs line");
 
-        Thread.sleep(10000);
     }
 
     private static class TaskXxx extends Thread {
