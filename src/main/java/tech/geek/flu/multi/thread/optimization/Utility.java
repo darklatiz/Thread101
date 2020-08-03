@@ -44,8 +44,8 @@ public class Utility {
 
         if(Utility.isShadeGray(red, green, blue)) {
             nRed = Math.min(255, red + 10);
-            nGreen = Math.min(0, green - 80);
-            nBlue = Math.min(0, blue - 20);
+            nGreen = Math.max(0, green - 80);
+            nBlue = Math.max(0, blue - 20);
         } else {
             nRed = red;
             nGreen = green;
