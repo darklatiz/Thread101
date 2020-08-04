@@ -44,7 +44,7 @@ public class Main {
 
         long startTime = System.currentTimeMillis();
         //recolorSingleThreaded(originalImage, resultImage);
-        int numberOfThreads = 1;
+        int numberOfThreads = 5;
         recolorMultithreaded(originalImage, resultImage, numberOfThreads);
         long endTime = System.currentTimeMillis();
 
