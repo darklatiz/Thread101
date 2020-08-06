@@ -2,12 +2,12 @@ package tech.geek.flu.multi.thread.locking;
 
 import java.util.Random;
 
-public class PricesUpdater extends Thread {
+public class PriceUpdater extends Thread {
 
-  private PriceContainer priceContainer;
+  private PricesContainer priceContainer;
   private Random randomPrice =  new Random();
 
-  public PricesUpdater(PriceContainer priceContainer) {
+  public PriceUpdater(PricesContainer priceContainer) {
     this.priceContainer = priceContainer;
   }
 

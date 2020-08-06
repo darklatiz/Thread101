@@ -8,7 +8,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 @Getter
 @Setter
-public class PriceContainer {
+public class PricesContainer {
   private Lock lockObject = new ReentrantLock();
 
   private double bitcoin;
