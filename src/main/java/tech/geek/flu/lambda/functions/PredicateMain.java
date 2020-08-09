@@ -29,6 +29,20 @@ public class PredicateMain {
     System.out.println("List with elements which size > 10: " + nn);
     System.out.println("List with elements which size > 10: " + nn1);
 
+    List<Integer> integers = List.of(1,56,78,54,2345,89,1,2,3,4,5,67,8,90, -1, -56, -908, -11);
+    Predicate<Integer> negativeNumbers = i -> i < 0;
+    List<Integer> nNumbers = filterList(integers, negativeNumbers);
+    List<Integer> nNumbers1 = integers.stream().filter(negativeNumbers).collect(Collectors.toList());
+    System.out.println(nNumbers);
+    System.out.println(nNumbers1);
+
+    Predicate<Integer> oddNumbers = i -> i % 2 == 1;
+    List<Integer> nOddNumbers = filterList(integers, oddNumbers);
+    List<Integer> nOddNumbers1 = integers.stream().filter(oddNumbers).collect(Collectors.toList());
+    System.out.println(nOddNumbers);
+    System.out.println(nOddNumbers1);
+
+
   }
 
   private static <T> List<T> filterList(List<T> strings, Predicate<T> predicate) {
