@@ -10,8 +10,11 @@ public class SupplierMain {
     System.out.println(stringSupplier.get());
 
     Supplier<Double> randomInte = () -> Math.random();
+    Supplier<Double> randonMethodreferece = Math :: random;
+
     for(int i = 0 ; i < 10; i++) {
       System.out.println(randomInte.get());
+      System.out.println(randonMethodreferece.get());
     }
   }
 
