@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class PredicateMain {
 
   public static void main(String[] args) {
-    List<String> strings = List.of("Basico", "Revolution", "", "Another string", "Blanck Panther", "", "");
+    List<String> strings = List.of("Basico", "Revolution", "", "Another string10", "Blanck Panther", "", "");
 
     Predicate<String> isEmptyPredicate = s -> !s.isEmpty();
     System.out.println("Before Predicate:        " + strings);
@@ -23,11 +23,17 @@ public class PredicateMain {
     List<String> nListWIthStream = strings.stream().filter(containsLetter).collect(Collectors.toList());
     System.out.println("UsingStreams : "  + nListWIthStream);
 
+    Predicate<String> lenGreaterThan10 = s -> s.length() > 15;
+    List<String> nn = filterList(strings, lenGreaterThan10);
+    List<String> nn1 = strings.stream().filter(lenGreaterThan10).collect(Collectors.toList());
+    System.out.println("List with elements which size > 10: " + nn);
+    System.out.println("List with elements which size > 10: " + nn1);
+
   }
 
-  private static List<String> filterList(List<String> strings, Predicate<String> predicate) {
-    List<String> arr = new ArrayList<>();
-    for(String s : strings) {
+  private static <T> List<T> filterList(List<T> strings, Predicate<T> predicate) {
+    List<T> arr = new ArrayList<>();
+    for(T s : strings) {
       if(predicate.test(s)) {
         arr.add(s);
       }
