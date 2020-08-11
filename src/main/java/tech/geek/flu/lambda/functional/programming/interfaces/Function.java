@@ -6,4 +6,5 @@ public interface Function<T, R> {
   default <V> Function<V, R> compose(Function<V, T> before) {
     return (V v) -> apply(before.apply(v));
   }
+
 }
