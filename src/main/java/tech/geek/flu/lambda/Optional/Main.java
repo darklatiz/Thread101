@@ -25,6 +25,19 @@ public class Main {
 
     stringOptional.filter(stringPredicate).ifPresent(s -> System.out.println(s.concat(" MMMM ")));
 
+    //ifPresent
+    Consumer<String> consumer = System.out::println;
+    Runnable runnableEmpty = () -> System.out.println("Empty Value");
+    Optional<String> empty = Optional.empty();
+    Optional<String> newOptional = Optional.of("hi");
+    newOptional.ifPresent(consumer);
+    empty.ifPresent(consumer);
+
+    //ifpresentElse
+    newOptional.ifPresentOrElse(consumer, runnableEmpty);
+    empty.ifPresentOrElse(consumer, runnableEmpty);
+
+
 
   }
 
